@@ -1,0 +1,2 @@
+# resources
+Generated resources
