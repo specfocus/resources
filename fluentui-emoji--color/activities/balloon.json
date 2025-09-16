@@ -9,7 +9,15 @@
   "kind": "emoji",
   "props": {},
   "content": {
-    "@type": "Group",
+    "@type": "Pictograph",
+    "name": "svg-pictograph",
+    "props": {
+      "width": 32,
+      "height": 32,
+      "viewBox": "0 0 32 32",
+      "fill": "none",
+      "xmlns": "http://www.w3.org/2000/svg"
+    },
     "children": [
       {
         "@type": "Path",
@@ -41,6 +49,9 @@
       },
       {
         "@type": "Group",
+        "props": {
+          "filter": "url(#filter0_i_18_470)"
+        },
         "children": [
           {
             "@type": "Path",
@@ -69,10 +80,7 @@
               "fill": "url(#paint4_radial_18_470)"
             }
           }
-        ],
-        "props": {
-          "filter": "url(#filter0_i_18_470)"
-        }
+        ]
       },
       {
         "@type": "Circle",
@@ -132,6 +140,9 @@
       },
       {
         "@type": "Group",
+        "props": {
+          "filter": "url(#filter1_f_18_470)"
+        },
         "children": [
           {
             "@type": "Path",
@@ -141,79 +152,13 @@
               "strokeWidth": 0.25
             }
           }
-        ],
-        "props": {
-          "filter": "url(#filter1_f_18_470)"
-        }
+        ]
       },
       {
         "@type": "Defs",
         "children": [
           {
             "@type": "Filter",
-            "primitives": [
-              {
-                "@type": "FeFlood",
-                "props": {
-                  "floodOpacity": "0",
-                  "result": "BackgroundImageFix"
-                }
-              },
-              {
-                "@type": "FeBlend",
-                "props": {
-                  "mode": "normal",
-                  "in": "SourceGraphic",
-                  "in2": "BackgroundImageFix",
-                  "result": "shape"
-                }
-              },
-              {
-                "@type": "FeColorMatrix",
-                "props": {
-                  "in": "SourceAlpha",
-                  "type": "matrix",
-                  "values": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
-                  "result": "hardAlpha"
-                }
-              },
-              {
-                "@type": "FeOffset",
-                "props": {
-                  "dy": 0.25
-                }
-              },
-              {
-                "@type": "FeGaussianBlur",
-                "props": {
-                  "stdDeviation": 0.25
-                }
-              },
-              {
-                "@type": "FeComposite",
-                "props": {
-                  "in2": "hardAlpha",
-                  "operator": "arithmetic",
-                  "k2": "-1",
-                  "k3": "1"
-                }
-              },
-              {
-                "@type": "FeColorMatrix",
-                "props": {
-                  "type": "matrix",
-                  "values": "0 0 0 0 0.576471 0 0 0 0 0.101961 0 0 0 0 0.294118 0 0 0 1 0"
-                }
-              },
-              {
-                "@type": "FeBlend",
-                "props": {
-                  "mode": "normal",
-                  "in2": "shape",
-                  "result": "effect1_innerShadow_18_470"
-                }
-              }
-            ],
             "props": {
               "id": "filter0_i_18_470",
               "x": 11.5243,
@@ -222,20 +167,17 @@
               "height": 3.0473,
               "filterUnits": "userSpaceOnUse",
               "colorInterpolationFilters": "sRGB"
-            }
-          },
-          {
-            "@type": "Filter",
-            "primitives": [
+            },
+            "children": [
               {
-                "@type": "FeFlood",
+                "@type": "feFlood",
                 "props": {
                   "floodOpacity": "0",
                   "result": "BackgroundImageFix"
                 }
               },
               {
-                "@type": "FeBlend",
+                "@type": "feBlend",
                 "props": {
                   "mode": "normal",
                   "in": "SourceGraphic",
@@ -244,13 +186,54 @@
                 }
               },
               {
-                "@type": "FeGaussianBlur",
+                "@type": "feColorMatrix",
                 "props": {
-                  "stdDeviation": 0.2,
-                  "result": "effect1_foregroundBlur_18_470"
+                  "in": "SourceAlpha",
+                  "type": "matrix",
+                  "values": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
+                  "result": "hardAlpha"
+                }
+              },
+              {
+                "@type": "feOffset",
+                "props": {
+                  "dy": 0.25
+                }
+              },
+              {
+                "@type": "feGaussianBlur",
+                "props": {
+                  "stdDeviation": 0.25
+                }
+              },
+              {
+                "@type": "feComposite",
+                "props": {
+                  "in2": "hardAlpha",
+                  "operator": "arithmetic",
+                  "k2": "-1",
+                  "k3": "1"
+                }
+              },
+              {
+                "@type": "feColorMatrix",
+                "props": {
+                  "type": "matrix",
+                  "values": "0 0 0 0 0.576471 0 0 0 0 0.101961 0 0 0 0 0.294118 0 0 0 1 0"
+                }
+              },
+              {
+                "@type": "feBlend",
+                "props": {
+                  "mode": "normal",
+                  "in2": "shape",
+                  "result": "effect1_innerShadow_18_470"
                 }
               }
-            ],
+            ]
+          },
+          {
+            "@type": "Filter",
             "props": {
               "id": "filter1_f_18_470",
               "x": 7.77078,
@@ -259,19 +242,35 @@
               "height": 8.02119,
               "filterUnits": "userSpaceOnUse",
               "colorInterpolationFilters": "sRGB"
-            }
-          },
-          {
-            "@type": "RadialGradient",
-            "stops": [
+            },
+            "children": [
               {
-                "stopColor": "#236FDE"
+                "@type": "feFlood",
+                "props": {
+                  "floodOpacity": "0",
+                  "result": "BackgroundImageFix"
+                }
               },
               {
-                "offset": 1,
-                "stopColor": "#245CAD"
+                "@type": "feBlend",
+                "props": {
+                  "mode": "normal",
+                  "in": "SourceGraphic",
+                  "in2": "BackgroundImageFix",
+                  "result": "shape"
+                }
+              },
+              {
+                "@type": "feGaussianBlur",
+                "props": {
+                  "stdDeviation": 0.2,
+                  "result": "effect1_foregroundBlur_18_470"
+                }
               }
-            ],
+            ]
+          },
+          {
+            "@type": "radialGradient",
             "props": {
               "id": "paint0_radial_18_470",
               "cx": 0,
@@ -279,20 +278,20 @@
               "r": 1,
               "gradientUnits": "userSpaceOnUse",
               "gradientTransform": "translate(14.3455 20.44) rotate(-155.2) scale(1.33933 0.654553)"
-            }
-          },
-          {
-            "@type": "LinearGradient",
+            },
             "stops": [
               {
-                "stopColor": "#1F67FF"
+                "offset": 0,
+                "stopColor": "#236FDE"
               },
               {
                 "offset": 1,
-                "stopColor": "#1F67FF",
-                "stopOpacity": "0"
+                "stopColor": "#245CAD"
               }
-            ],
+            ]
+          },
+          {
+            "@type": "linearGradient",
             "props": {
               "id": "paint1_linear_18_470",
               "x1": 6.74329,
@@ -300,20 +299,21 @@
               "x2": 8.55579,
               "y2": 29.29,
               "gradientUnits": "userSpaceOnUse"
-            }
-          },
-          {
-            "@type": "LinearGradient",
+            },
             "stops": [
               {
+                "offset": 0,
                 "stopColor": "#1F67FF"
               },
               {
                 "offset": 1,
                 "stopColor": "#1F67FF",
-                "stopOpacity": "0"
+                "stopOpacity": 0
               }
-            ],
+            ]
+          },
+          {
+            "@type": "linearGradient",
             "props": {
               "id": "paint2_linear_18_470",
               "x1": 12.837,
@@ -321,20 +321,21 @@
               "x2": 13.1183,
               "y2": 22.5703,
               "gradientUnits": "userSpaceOnUse"
-            }
-          },
-          {
-            "@type": "LinearGradient",
+            },
             "stops": [
               {
-                "stopColor": "#994CA1"
+                "offset": 0,
+                "stopColor": "#1F67FF"
               },
               {
                 "offset": 1,
-                "stopColor": "#994CA1",
-                "stopOpacity": "0"
+                "stopColor": "#1F67FF",
+                "stopOpacity": 0
               }
-            ],
+            ]
+          },
+          {
+            "@type": "linearGradient",
             "props": {
               "id": "paint3_linear_18_470",
               "x1": 12.6447,
@@ -342,20 +343,21 @@
               "x2": 13.0936,
               "y2": 20.5179,
               "gradientUnits": "userSpaceOnUse"
-            }
-          },
-          {
-            "@type": "RadialGradient",
+            },
             "stops": [
               {
-                "stopColor": "#BE4369"
+                "offset": 0,
+                "stopColor": "#994CA1"
               },
               {
-                "offset": 0.702059,
-                "stopColor": "#BE4369",
-                "stopOpacity": "0"
+                "offset": 1,
+                "stopColor": "#994CA1",
+                "stopOpacity": 0
               }
-            ],
+            ]
+          },
+          {
+            "@type": "radialGradient",
             "props": {
               "id": "paint4_radial_18_470",
               "cx": 0,
@@ -363,19 +365,21 @@
               "r": 1,
               "gradientUnits": "userSpaceOnUse",
               "gradientTransform": "translate(13.914 20.6953) rotate(116.155) scale(0.526759 2.16327)"
-            }
-          },
-          {
-            "@type": "RadialGradient",
+            },
             "stops": [
               {
-                "stopColor": "#FF3C47"
+                "offset": 0,
+                "stopColor": "#BE4369"
               },
               {
-                "offset": 1,
-                "stopColor": "#AC2146"
+                "offset": 0.702059,
+                "stopColor": "#BE4369",
+                "stopOpacity": 0
               }
-            ],
+            ]
+          },
+          {
+            "@type": "radialGradient",
             "props": {
               "id": "paint5_radial_18_470",
               "cx": 0,
@@ -383,21 +387,20 @@
               "r": 1,
               "gradientUnits": "userSpaceOnUse",
               "gradientTransform": "translate(24.3359 6.83984) rotate(140.847) scale(14.7492 15.9267)"
-            }
-          },
-          {
-            "@type": "RadialGradient",
+            },
             "stops": [
               {
-                "offset": 0.7186,
-                "stopColor": "#8A4BB7",
-                "stopOpacity": "0"
+                "offset": 0,
+                "stopColor": "#FF3C47"
               },
               {
-                "offset": 0.946093,
-                "stopColor": "#8A4BB7"
+                "offset": 1,
+                "stopColor": "#AC2146"
               }
-            ],
+            ]
+          },
+          {
+            "@type": "radialGradient",
             "props": {
               "id": "paint6_radial_18_470",
               "cx": 0,
@@ -405,20 +408,21 @@
               "r": 1,
               "gradientUnits": "userSpaceOnUse",
               "gradientTransform": "translate(19.1348 2.84783) rotate(99.1762) scale(18.8827)"
-            }
-          },
-          {
-            "@type": "RadialGradient",
+            },
             "stops": [
               {
-                "stopColor": "#A52082"
+                "offset": 0.7186,
+                "stopColor": "#8A4BB7",
+                "stopOpacity": 0
               },
               {
-                "offset": 1,
-                "stopColor": "#A52082",
-                "stopOpacity": "0"
+                "offset": 0.946093,
+                "stopColor": "#8A4BB7"
               }
-            ],
+            ]
+          },
+          {
+            "@type": "radialGradient",
             "props": {
               "id": "paint7_radial_18_470",
               "cx": 0,
@@ -426,21 +430,21 @@
               "r": 1,
               "gradientUnits": "userSpaceOnUse",
               "gradientTransform": "translate(14.3551 21.6323) rotate(-84.6678) scale(10.8012 11.9865)"
-            }
-          },
-          {
-            "@type": "RadialGradient",
+            },
             "stops": [
               {
-                "offset": 0.741249,
-                "stopColor": "#8C4972",
-                "stopOpacity": "0"
+                "offset": 0,
+                "stopColor": "#A52082"
               },
               {
                 "offset": 1,
-                "stopColor": "#8C4972"
+                "stopColor": "#A52082",
+                "stopOpacity": 0
               }
-            ],
+            ]
+          },
+          {
+            "@type": "radialGradient",
             "props": {
               "id": "paint8_radial_18_470",
               "cx": 0,
@@ -448,20 +452,21 @@
               "r": 1,
               "gradientUnits": "userSpaceOnUse",
               "gradientTransform": "translate(19.8995 11.8516) rotate(-164.672) scale(11.5851 15.2778)"
-            }
-          },
-          {
-            "@type": "RadialGradient",
+            },
             "stops": [
               {
-                "stopColor": "#EE4952"
+                "offset": 0.741249,
+                "stopColor": "#8C4972",
+                "stopOpacity": 0
               },
               {
                 "offset": 1,
-                "stopColor": "#EE4952",
-                "stopOpacity": "0"
+                "stopColor": "#8C4972"
               }
-            ],
+            ]
+          },
+          {
+            "@type": "radialGradient",
             "props": {
               "id": "paint9_radial_18_470",
               "cx": 0,
@@ -469,10 +474,29 @@
               "r": 1,
               "gradientUnits": "userSpaceOnUse",
               "gradientTransform": "translate(23.6495 0.0390618) rotate(107.21) scale(11.6178 16.2817)"
-            }
+            },
+            "stops": [
+              {
+                "offset": 0,
+                "stopColor": "#EE4952"
+              },
+              {
+                "offset": 1,
+                "stopColor": "#EE4952",
+                "stopOpacity": 0
+              }
+            ]
           },
           {
-            "@type": "RadialGradient",
+            "@type": "radialGradient",
+            "props": {
+              "id": "paint10_radial_18_470",
+              "cx": 0,
+              "cy": 0,
+              "r": 1,
+              "gradientUnits": "userSpaceOnUse",
+              "gradientTransform": "translate(24.1987 6.08393) rotate(117.542) scale(3.84319 8.42424)"
+            },
             "stops": [
               {
                 "offset": 0.120792,
@@ -481,24 +505,25 @@
               {
                 "offset": 1,
                 "stopColor": "#FFFBFC",
-                "stopOpacity": "0"
+                "stopOpacity": 0
               }
-            ],
-            "props": {
-              "id": "paint10_radial_18_470",
-              "cx": 0,
-              "cy": 0,
-              "r": 1,
-              "gradientUnits": "userSpaceOnUse",
-              "gradientTransform": "translate(24.1987 6.08393) rotate(117.542) scale(3.84319 8.42424)"
-            }
+            ]
           },
           {
-            "@type": "LinearGradient",
+            "@type": "linearGradient",
+            "props": {
+              "id": "paint11_linear_18_470",
+              "x1": 13.2745,
+              "y1": 23.2422,
+              "x2": 9.25891,
+              "y2": 29.8984,
+              "gradientUnits": "userSpaceOnUse"
+            },
             "stops": [
               {
+                "offset": 0,
                 "stopColor": "#5CB2FF",
-                "stopOpacity": "0"
+                "stopOpacity": 0
               },
               {
                 "offset": 0.297934,
@@ -511,28 +536,13 @@
               {
                 "offset": 1,
                 "stopColor": "#5CB2FF",
-                "stopOpacity": "0"
+                "stopOpacity": 0
               }
-            ],
-            "props": {
-              "id": "paint11_linear_18_470",
-              "x1": 13.2745,
-              "y1": 23.2422,
-              "x2": 9.25891,
-              "y2": 29.8984,
-              "gradientUnits": "userSpaceOnUse"
-            }
+            ]
           }
         ]
       }
-    ],
-    "props": {
-      "width": 32,
-      "height": 32,
-      "viewBox": "0 0 32 32",
-      "fill": "none",
-      "xmlns": "http://www.w3.org/2000/svg"
-    }
+    ]
   },
   "unicode": "1f388"
 }
